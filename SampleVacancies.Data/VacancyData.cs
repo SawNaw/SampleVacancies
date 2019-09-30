@@ -33,7 +33,8 @@ namespace SampleVacancies.Data
         public IEnumerable<Vacancy> GetVacanciesByName(string name)
         {
             return dbContext.Vacancies.Where(x => String.IsNullOrWhiteSpace(name) 
-                                                || x.JobTitle.ToUpperInvariant().Contains(name.ToUpperInvariant()))
+                                                || x.JobTitle.Contains(name))
+                                      .AsEnumerable()
                                       .OrderByDescending(x => x.JobTitle);
                                       
         }

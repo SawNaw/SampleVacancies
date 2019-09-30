@@ -35,7 +35,7 @@ namespace SampleVacancies.Pages
 
         public IActionResult OnGet()
         {
-            Vacancies = vacancyData.GetAllVacancies();
+            Vacancies = vacancyData.GetVacanciesByName(SearchTerm);
             return Page();
         }
 

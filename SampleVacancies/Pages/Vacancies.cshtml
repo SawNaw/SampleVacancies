@@ -15,24 +15,35 @@
     <input type="hidden" asp-for="Vacancy.Id"/>
     <div class="form-group">
         <label asp-for="Vacancy.JobTitle" class="Field-Label">Job Title*:</label>
-        <input asp-for="Vacancy.JobTitle" class="Regular-Field" />
+        <input asp-for="Vacancy.JobTitle" class="Regular-Field" placeholder="Enter a job title..." />
         <br />
         <label asp-for="Vacancy.Location" class="Field-Label">Location*:</label>
-        <input asp-for="Vacancy.Location" class="Regular-Field" />
+        <input asp-for="Vacancy.Location" class="Regular-Field" placeholder="Where is this job located?"/>
         <br />
         <label asp-for="Vacancy.Department" class="Field-Label">Department:</label>
-        <input asp-for="Vacancy.Department" class="Regular-Field" />
+        <input asp-for="Vacancy.Department" class="Regular-Field" placeholder="Where is this job located?"/>
         <br />
         <label asp-for="Vacancy.Salary" class="Field-Label">Salary*:</label>
-        <input asp-for="Vacancy.Salary" class="Regular-Field" />
+        <input asp-for="Vacancy.Salary" class="Regular-Field" placeholder="How much is this job paying...?" />
         <br />
         <label asp-for="Vacancy.Description" class="Field-Label">Description*:</label>
-        <input asp-for="Vacancy.Description" class="Description-Field" />
+        <input asp-for="Vacancy.Description" class="Description-Field" placeholder="Describe the role in detail..."/>
     </div>
     <button type="submit" class="btn btn-primary">Post this vacancy</button>
 </form>
-
-
+<br />
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Enter a job title to search..." asp-for="SearchTerm" />
+            <span class="input-group-prepend">
+                <button class="btn btn-primary">
+                    <i class="fas fa-search-plus"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
 
 @foreach (var vacancy in Model.Vacancies)
 {
