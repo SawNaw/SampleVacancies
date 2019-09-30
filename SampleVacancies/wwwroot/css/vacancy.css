@@ -1,0 +1,32 @@
+﻿.Vacancies {
+    width: 560px;
+    height: 68px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #41a0db;
+}
+
+.To-get-a-feel-for-wh {
+    width: 1000px;
+    height: 60px;
+    font-family: OpenSans;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.83;
+    letter-spacing: normal;
+    color: #4d4d4d;
+}
+
+.Rectangle-Vacancy {
+    width: 1000px;
+    height: 237px;
+    box-shadow: 0 2px 0 1px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}

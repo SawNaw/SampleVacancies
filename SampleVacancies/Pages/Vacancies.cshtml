@@ -1,0 +1,23 @@
+﻿@page
+@model SampleVacancies.Pages.VacanciesModel
+@{
+    ViewData["Title"] = "Vacancies";
+}
+
+<div class="Vacancies">Vacancies</div>
+<br />
+<div class="To-get-a-feel-for-wh">
+    To get a feel for what it’s like to work for us then please visit Who We Are or see what we’ve been up to within ITC News. Due to continued growth, we currently have the following vacancies:
+</div>
+
+<form method="post">
+    <label for="job-title">Job Title*:</label>
+    <input name="job-title" />
+</form>
+
+@foreach (var vacancy in Model.Vacancies)
+{
+    <div>@vacancy.JobTitle</div>
+}
+
+
