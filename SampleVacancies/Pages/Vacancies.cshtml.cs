@@ -10,12 +10,19 @@ using SampleVacancies.Data;
 
 namespace SampleVacancies.Pages
 {
+    [BindProperties]
     public class VacanciesModel : PageModel
     {
         private readonly IConfiguration config;
         private readonly IVacancyData vacancyData;
 
         public IEnumerable<Vacancy> Vacancies { get; set; }
+        public Vacancy Vacancy { get; set; }
+        public string JobTitle { get; set; }
+        public string Location { get; set; }
+        public string Department { get; set; }
+        public string Salary { get; set; }
+        public string Description { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
@@ -26,9 +33,17 @@ namespace SampleVacancies.Pages
             this.vacancyData = vacancyData;
         }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
             Vacancies = vacancyData.GetAllVacancies();
+            return Page();
+        }
+
+        public IActionResult OnPost() 
+        {
+            Vacancy = vacancyData.Update(Vacancy);
+            vacancyData.Commit();
+            return RedirectToPage("./Vacancies");
         }
     }
 }

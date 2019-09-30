@@ -9,7 +9,7 @@ using SampleVacancies.Data;
 namespace SampleVacancies.Data.Migrations
 {
     [DbContext(typeof(SampleVacanciesDbContext))]
-    [Migration("20190930013145_InitialCreate")]
+    [Migration("20190930041436_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,6 +50,26 @@ namespace SampleVacancies.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vacancies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Department = "Sales",
+                            Description = "This is a wonderful opportunity for an up-and-coming manager.",
+                            JobTitle = "Manager",
+                            Location = "Manchester",
+                            Salary = "£50,000"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Department = "Human Resources",
+                            Description = "Calling all skilled accountants to this exciting opportunity.",
+                            JobTitle = "Accountant",
+                            Location = "Salford",
+                            Salary = "£45,000"
+                        });
                 });
 #pragma warning restore 612, 618
         }

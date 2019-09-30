@@ -4,6 +4,7 @@
     ViewData["Title"] = "Vacancies";
 }
 
+
 <div class="Vacancies">Vacancies</div>
 <br />
 <div class="To-get-a-feel-for-wh">
@@ -11,13 +12,36 @@
 </div>
 
 <form method="post">
-    <label for="job-title">Job Title*:</label>
-    <input name="job-title" />
+    <input type="hidden" asp-for="Vacancy.Id"/>
+    <div class="form-group">
+        <label asp-for="Vacancy.JobTitle" class="Field-Label">Job Title*:</label>
+        <input asp-for="Vacancy.JobTitle" class="Regular-Field" />
+        <br />
+        <label asp-for="Vacancy.Location" class="Field-Label">Location*:</label>
+        <input asp-for="Vacancy.Location" class="Regular-Field" />
+        <br />
+        <label asp-for="Vacancy.Department" class="Field-Label">Department:</label>
+        <input asp-for="Vacancy.Department" class="Regular-Field" />
+        <br />
+        <label asp-for="Vacancy.Salary" class="Field-Label">Salary*:</label>
+        <input asp-for="Vacancy.Salary" class="Regular-Field" />
+        <br />
+        <label asp-for="Vacancy.Description" class="Field-Label">Description*:</label>
+        <input asp-for="Vacancy.Description" class="Description-Field" />
+    </div>
+    <button type="submit" class="btn btn-primary">Post this vacancy</button>
 </form>
+
+
 
 @foreach (var vacancy in Model.Vacancies)
 {
-    <div>@vacancy.JobTitle</div>
+    <div class="Rectangle-Vacancy">
+        <div class="Job-Title">@vacancy.JobTitle</div>
+        <div class="Job-Description">@vacancy.Description</div>
+        <div class="Job-Location">@vacancy.Location</div>
+        <div class="Salary">@vacancy.Salary</div>
+    </div>
 }
 
 

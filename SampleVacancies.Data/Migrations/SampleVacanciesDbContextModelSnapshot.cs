@@ -33,8 +33,8 @@ namespace SampleVacancies.Data.Migrations
 
                     b.Property<string>("JobTitle")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
 
                     b.Property<string>("Location")
                         .IsRequired()

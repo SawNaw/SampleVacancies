@@ -45,7 +45,8 @@ namespace SampleVacancies.Data
 
         public Vacancy Update(Vacancy vacancy)
         {
-            throw new NotImplementedException();
+            dbContext.Add(vacancy);
+            return vacancy;
         }
 
         public int Commit()

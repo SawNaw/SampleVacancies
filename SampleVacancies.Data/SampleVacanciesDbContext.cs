@@ -30,6 +30,15 @@ namespace SampleVacancies.Data
                 },
                 new Vacancy
                 {
+                    Id = 2,
+                    JobTitle = "Receptionist",
+                    Department = "N/A",
+                    Description = "Looking for friendly receptionists.",
+                    Location = "Liverpool",
+                    Salary = "£35,000"
+                },
+                new Vacancy
+                {
                     Id = 3,
                     JobTitle = "Accountant",
                     Department = "Human Resources",

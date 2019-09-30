@@ -10,7 +10,7 @@ namespace SampleVacancies.Core.Models
     {
         public int Id { get; set; }
 
-        [Required, StringLength(50)]
+        [Required, StringLength(60)]
         public string JobTitle { get; set; }
 
         [Required, StringLength(100)]

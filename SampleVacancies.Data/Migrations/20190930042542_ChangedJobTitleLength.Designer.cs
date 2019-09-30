@@ -9,8 +9,8 @@ using SampleVacancies.Data;
 namespace SampleVacancies.Data.Migrations
 {
     [DbContext(typeof(SampleVacanciesDbContext))]
-    [Migration("20190930013509_whatever")]
-    partial class whatever
+    [Migration("20190930042542_ChangedJobTitleLength")]
+    partial class ChangedJobTitleLength
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,8 +35,8 @@ namespace SampleVacancies.Data.Migrations
 
                     b.Property<string>("JobTitle")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(60)")
+                        .HasMaxLength(60);
 
                     b.Property<string>("Location")
                         .IsRequired()
